@@ -49,13 +49,13 @@ export default async function Home() {
                 href="/professor"
                 className="rounded-full bg-white px-10 py-5 text-xl font-semibold text-dawnDeep shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
               >
-                um professor
+                professor
               </Link>
               <Link
                 href="/aluno"
                 className="rounded-full bg-stamp px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
               >
-                um aluno
+                aluno
               </Link>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default async function Home() {
 
       {/* Featured opportunities slider */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-[24px] bg-[#E6E2D6] p-8">
+        <div className="rounded-[24px] bg-[#F2EFE5] p-8">
           <div className="flex items-end justify-between">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-inkMuted">
