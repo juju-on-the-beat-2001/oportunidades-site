@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #FFF9F2;
+  color: #1B2340;
+}
+
+/* The homepage: a dawn breaking — deep indigo night dissolving into
+   warm coral-gold light, spread evenly across the full page instead of
+   being confined to the hero alone. */
+.dawn-page {
+  background: linear-gradient(
+    170deg,
+    #151B3B 0%,
+    #3E3470 38%,
+    #A8497A 62%,
+    #FF6F59 82%,
+    #FFC857 100%
+  );
+}
+
+/* Status badge: a small point of light, not a rubber stamp.
+   A soft glowing dot + text, colored by urgency. */
+.glow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.4em 0.9em 0.4em 0.7em;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.glow-dot {
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 0.6em currentColor;
+}
+
+.glow-open { color: #1E8A4C; background: #E5F6EB; }
+.glow-urgent { color: #A66B00; background: #FFF4D6; }
+.glow-soon { color: #4C5FD6; background: #ECEFFF; }
+.glow-closed { color: #8A8FA3; background: #F1F1F5; }
+
+/* Opportunity cards: warm, soft, inviting — not filed paperwork. */
+.opportunity-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(27, 35, 64, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(27, 35, 64, 0.14);
+}
+
+.snap-row {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-row > * {
+  scroll-snap-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid #FF6F59;
+  outline-offset: 2px;
+}
