@@ -54,7 +54,7 @@ export const SUBJECTS = [
   { code: "biology_science", label: "Biologia/Ciências", icon: "🔬" },
   { code: "chemistry", label: "Química", icon: "⚗️" },
   { code: "math", label: "Matemática", icon: "📐" },
-  { code: "cs_programming_robotics", label: "Computação, Programação e Robótica", icon: "🤖" },
+  { code: "cs_programming_robotics", label: "Computação e Robótica", icon: "🤖" },
   { code: "history", label: "História", icon: "🏛️" },
   { code: "geography", label: "Geografia", icon: "🌍" },
   { code: "philosophy_sociology", label: "Filosofia e Sociologia", icon: "🧠" },
