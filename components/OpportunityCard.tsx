@@ -4,7 +4,13 @@ import { getOpportunityImageUrl } from "@/lib/supabase";
 import StampBadge from "./StampBadge";
 import BreakOnSemicolons from "./BreakOnSemicolons";
 
-export default function OpportunityCard({ opp }: { opp: Opportunity }) {
+export default function OpportunityCard({
+  opp,
+  eligibilityYearsToGo,
+}: {
+  opp: Opportunity;
+  eligibilityYearsToGo?: number | null;
+}) {
   const imageUrl = getOpportunityImageUrl(opp);
 
   return (
@@ -41,7 +47,11 @@ export default function OpportunityCard({ opp }: { opp: Opportunity }) {
         )}
 
         <div className="mt-4">
-          <StampBadge status={opp.status} cycleStart={opp.current_cycle_start} />
+          <StampBadge
+            status={opp.status}
+            cycleStart={opp.current_cycle_start}
+            eligibilityYearsToGo={eligibilityYearsToGo}
+          />
         </div>
       </div>
     </Link>

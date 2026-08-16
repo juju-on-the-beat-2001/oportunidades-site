@@ -58,7 +58,7 @@ export default function ProfessorFlow() {
       {step === 1 && (
         <>
           <h1 className="mt-3 font-display text-4xl font-semibold text-ink sm:text-5xl">
-            O que você ensina?
+            Quais matérias você ensina?
           </h1>
           <p className="mt-3 text-base text-inkMuted">
             Selecione quantas quiser — vamos te ajudar a encontrar
@@ -89,7 +89,7 @@ export default function ProfessorFlow() {
       {step === 2 && (
         <>
           <h1 className="mt-3 font-display text-4xl font-semibold text-ink sm:text-5xl">
-            Qual série você ensina?
+            Quais séries você ensina?
           </h1>
           <p className="mt-3 text-base text-inkMuted">Selecione quantas quiser.</p>
           <div className="mt-6 space-y-6">

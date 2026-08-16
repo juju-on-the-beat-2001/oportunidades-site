@@ -26,10 +26,10 @@ export type Opportunity = {
   status: string;
 };
 
-// Grades in display order — used by both onboarding flows.
+// Grades in display order — used by both onboarding flows. 6º and 7º
+// ano were dropped from the picker on purpose (Ensino Fundamental starts
+// at 8º ano here).
 export const GRADES = [
-  { code: "grade_6", label: "6º Ano" },
-  { code: "grade_7", label: "7º Ano" },
   { code: "grade_8", label: "8º Ano" },
   { code: "grade_9", label: "9º Ano" },
   { code: "grade_10", label: "1º Ano" },
@@ -42,7 +42,7 @@ export const GRADES = [
 export const GRADE_GROUPS = [
   {
     label: "Ensino Fundamental",
-    grades: GRADES.filter((g) => ["grade_6", "grade_7", "grade_8", "grade_9"].includes(g.code)),
+    grades: GRADES.filter((g) => ["grade_8", "grade_9"].includes(g.code)),
   },
   {
     label: "Ensino Médio",
@@ -99,8 +99,7 @@ export function getParticipationTypeLabel(code: string): string {
 export const OPPORTUNITY_TYPES = [
   { code: "competition_contest", label: "Competição e concurso" },
   { code: "academic_olympiad", label: "Olimpíada do conhecimento" },
-  { code: "exchange_program", label: "Intercâmbio" },
-  { code: "scholarship", label: "Bolsa de estudo" },
-  { code: "summer_program", label: "Programa de verão" },
   { code: "social_impact", label: "Impacto social" },
+  { code: "exchange_program", label: "Intercâmbio" },
+  { code: "scholarship", label: "Faculdade no Exterior" },
 ];

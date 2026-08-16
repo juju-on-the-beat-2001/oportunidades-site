@@ -47,15 +47,17 @@ export default async function Home() {
             <div className="flex gap-4">
               <Link
                 href="/professor"
-                className="rounded-full bg-white px-10 py-5 text-xl font-semibold text-dawnDeep shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+                className="flex items-center gap-2 rounded-full bg-white px-10 py-5 text-xl font-semibold text-dawnDeep shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
               >
-                professor
+                <span aria-hidden="true">🍎</span>
+                Professor
               </Link>
               <Link
                 href="/aluno"
-                className="rounded-full bg-stamp px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+                className="flex items-center gap-2 rounded-full bg-stamp px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
               >
-                aluno
+                <span aria-hidden="true">✏️</span>
+                Aluno
               </Link>
             </div>
           </div>

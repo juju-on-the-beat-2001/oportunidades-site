@@ -32,7 +32,7 @@ function Chip({
   );
 }
 
-const AGES = Array.from({ length: 7 }, (_, i) => 14 + i); // 14–20
+const AGES = Array.from({ length: 6 }, (_, i) => 14 + i); // 14–19
 
 export default function AlunoFlow() {
   const router = useRouter();

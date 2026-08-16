@@ -1,6 +1,6 @@
 // "How to prepare for this opportunity" — a small hand-authored data
 // sheet keyed by opportunity_type. Every opportunity of the same type
-// (e.g. every "summer_program") shows the exact same three resource
+// (e.g. every "academic_olympiad") shows the exact same three resource
 // cards; this isn't generated per-opportunity.
 //
 // `url: null` means the link hasn't been filled in yet — the card still
@@ -90,26 +90,6 @@ export const PREP_RESOURCES: Record<string, PrepResource[]> = {
       title: "Depoimentos de bolsistas",
       description:
         "Veja relatos de quem já conquistou essa bolsa e como se preparou para o processo seletivo.",
-      url: null,
-    },
-  ],
-  summer_program: [
-    {
-      title: "Como se preparar para o processo seletivo",
-      description:
-        "Entenda as etapas do processo e o que costuma ser avaliado em cada uma delas.",
-      url: null,
-    },
-    {
-      title: "Dicas de ensaio e redação",
-      description:
-        "Veja boas práticas para escrever textos de aplicação que se destacam entre os candidatos.",
-      url: null,
-    },
-    {
-      title: "Experiências de participantes anteriores",
-      description:
-        "Leia relatos de quem já fez o programa para saber o que esperar da experiência.",
       url: null,
     },
   ],
