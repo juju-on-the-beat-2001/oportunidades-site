@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { OPPORTUNITY_TYPES } from "@/lib/types";
 
@@ -62,9 +63,11 @@ function FilterGroup({
 export default function FiltersSidebar() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const selectedTypes = (searchParams.get("types") || "").split(",").filter(Boolean);
   const selectedRegions = (searchParams.get("region") || "").split(",").filter(Boolean);
   const selectedWhens = (searchParams.get("when") || "").split(",").filter(Boolean);
+  const activeCount = selectedTypes.length + selectedRegions.length + selectedWhens.length;
 
   function toggle(key: string, code: string, current: string[]) {
     const next = current.includes(code)
@@ -81,25 +84,48 @@ export default function FiltersSidebar() {
   }
 
   return (
-    <aside className="flex w-full shrink-0 flex-col gap-8 lg:sticky lg:top-8 lg:w-56">
-      <FilterGroup
-        title="Tipo"
-        items={OPPORTUNITY_TYPES}
-        selected={selectedTypes}
-        onToggle={(code) => toggle("types", code, selectedTypes)}
-      />
-      <FilterGroup
-        title="Alcance"
-        items={REGIONS}
-        selected={selectedRegions}
-        onToggle={(code) => toggle("region", code, selectedRegions)}
-      />
-      <FilterGroup
-        title="Quando"
-        items={WHEN_OPTIONS}
-        selected={selectedWhens}
-        onToggle={(code) => toggle("when", code, selectedWhens)}
-      />
+    <aside className="w-full shrink-0 lg:sticky lg:top-8 lg:w-56">
+      {/* Mobile-only toggle — the groups below stay hidden until this is
+          tapped. Irrelevant at lg and up, where the sidebar is always
+          visible, so the button itself is hidden there. */}
+      <button
+        type="button"
+        onClick={() => setMobileOpen((open) => !open)}
+        className="mb-4 flex w-full items-center justify-between rounded-full border border-ink/25 px-5 py-3 text-sm font-semibold text-ink lg:hidden"
+      >
+        <span>
+          Filtrar oportunidades
+          {activeCount > 0 && (
+            <span className="ml-2 rounded-full bg-ink px-2 py-0.5 text-xs text-paper">
+              {activeCount}
+            </span>
+          )}
+        </span>
+        <span aria-hidden="true">{mobileOpen ? "▲" : "▼"}</span>
+      </button>
+
+      <div
+        className={`${mobileOpen ? "flex" : "hidden"} flex-col gap-8 lg:flex`}
+      >
+        <FilterGroup
+          title="Tipo"
+          items={OPPORTUNITY_TYPES}
+          selected={selectedTypes}
+          onToggle={(code) => toggle("types", code, selectedTypes)}
+        />
+        <FilterGroup
+          title="Alcance"
+          items={REGIONS}
+          selected={selectedRegions}
+          onToggle={(code) => toggle("region", code, selectedRegions)}
+        />
+        <FilterGroup
+          title="Quando"
+          items={WHEN_OPTIONS}
+          selected={selectedWhens}
+          onToggle={(code) => toggle("when", code, selectedWhens)}
+        />
+      </div>
     </aside>
   );
 }
